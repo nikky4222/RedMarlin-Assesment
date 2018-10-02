@@ -114,8 +114,8 @@ for i,jj in enumerate(j_fin['topics']):
 md=pd.DataFrame(j_fin.topics.tolist())
 #md = pd.to_numeric(md, errors='coerce')
 md1=j_fin.set_index('id').T.to_dict('list')
-
-jsonn = json.dumps(md1)
-f1 = open("dict.json","w")
-f1.write(jsonn)
-f1.close()
+        
+f=open("finall.json","w")
+for k,v in md1.items():
+   s=str(k)+"   "+str(v)+"\n"
+   b=f.write(s)
